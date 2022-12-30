@@ -1,6 +1,9 @@
 # Sudoku
 Welcome to your first programming project! You will use what you've learned in this course to build a fully functioning app worthy of bragging about in your resume / CV :) After you complete the project, you'll be able to interact with the code by setting / clearing / auto-solving the board.
 
+# Prerequisites
+Ensure that you have created an account at [replit.com](https://replit.com/) and **that you have verified your email** 
+
 # Overview
 Sudoku is a puzzle game in which a 9x9 grid must be filled entirely with numbers 1 through 9. The 9x9 grid is further subdivided into nine 3x3 grids, whose purpose will be described shortly. The puzzle is typically filled with a few values at the start and is subject to the following constraints. 
 
@@ -8,7 +11,7 @@ Sudoku is a puzzle game in which a 9x9 grid must be filled entirely with numbers
 2. Each column must contain all numbers in the range 1 through 9
 3. Each 3x3 grid must contain all numbers in the range 1 through 9
 
-Since each row, column, and 3x3 grid has 9 elements to fill in, and each row, column, and 3x3 grid must contain all numbers 1 through 9, this also means that each number 1 through 9 must appear exactly once in each row, column and 3x3 grid. See the following completed puzzle and sanity check that it fulfills these constraints.
+See the following completed puzzle and sanity check that it fulfills these constraints.
 
 ```
 -----------------------
@@ -30,7 +33,8 @@ Since each row, column, and 3x3 grid has 9 elements to fill in, and each row, co
 Here is a brief overview of each
 
 ## Cell
-A sudoku grid is a 9x9 grid; we're calling each of the individual 81 squares a `Cell`. 
+A sudoku grid is a 9x9 grid; we're calling each of the individual 81 squares a `Cell`.
+`Cell`s will be populated with 0's by default. They also have a private attribute called `isFixed`. In case you're not familiar with the game, Sudoku puzzles are always filled with a few values initially, and you're asked to fill in the rest. The initial values that you're given cannot be changed. For these immutable cells, `isFixed` should be set to `true`. All other cells should have `isFixed` set to `false`
 
 ## Row
 As the name suggests, this represents a row in the Sudoku grid. Each row should contain 9 `Cell`s. We number the rows 0 through 8 from top to bottom.
@@ -52,7 +56,7 @@ A `Block` is a 3x3 grid. We number the blocks like so:
        row7  |      block6        |       block7      |      block8       |
        row8  |____________________|___________________|___________________|
 
-`Block`s should also contain 9 `Cell`s each. 
+`Block`s should also contain 9 `Cell`s each.
 
 ## Board
 As the name suggests, this represents the entire Sudoku board. We represent	 it as 9 `Row`s, 9 `Column`s, and 9 `Block`s. The reason we do this is so that we can take advantage of the modularity offered by OOP; the `Board` will take in actions from the main driver program and delegate those actions to `Row` / `Column` / `Block`, which in turn will perform logic and update the `Cell` accordingly.
@@ -60,7 +64,21 @@ As the name suggests, this represents the entire Sudoku board. We represent	 it 
 ## Main
 This has been implemented for you already. This contains some methods used to generate and solve puzzles and also contains code to process user inputs to play the game when the project is complete (see how to interact with the program under section "Playing the Game" below).
 
-## Running Unit Tests
+# Workflow
+Here is the suggested order in which you should complete this project
+1. Fill out the code where there are `// TODO` comments in the `Cell.java` class.
+2. Run all unit tests. You should pass all unit tests related to `Cell`
+3. Fill out the code where there are `// TODO` comments in the `Row.java` class. 
+4. Run all unit tests. You should pass all unit tests related to `Cell` and `Row`
+5. Fill out the code where there are `// TODO` comments in the `Column.java` class. 
+6. Run all unit tests. You should pass all unit tests related to `Cell`, `Row`, and `Column`
+7. Fill out the code where there are `// TODO` comments in the `Block.java` class. 
+8. Run all unit tests. You should pass all unit tests related to `Block`, `Cell`, `Row`, and `Column`
+7. Fill out the code where there are `// TODO` comments in the `Board.java` class. 
+8. Run all unit tests. You should pass all unit tests now.
+9. Run the game (see final section)
+
+# Running Unit Tests
 
 This project has several unit tests written for you. These are intended to *help* you, not burden you. Each unit test covers just a few lines of code, so if a test fails, it is significantly easier to locate where a bug might exist than it is if you just launch the entire program and it fails. **Remember**: hitting the big green "Run" button does **not** run unit tests; that starts the application and prepares it to accept user input for a game of Sudoku.
 
@@ -77,20 +95,6 @@ Then click Run Tests in the new panel
 ![runtest](img/runtest.png)
 
 Navigate to the "console" tab (see the "Tools" section from earlier), and you should be able to see how many tests you pass. **Before you've written any code, ALL unit tests should fail.**
-
-# Workflow
-Here is the expected order in which you should complete this project
-1. Fill out the code where there are `// TODO` comments in the `Cell.java` class.
-2. Run all unit tests. You should pass all unit tests related to `Cell`
-3. Fill out the code where there are `// TODO` comments in the `Row.java` class. 
-4. Run all unit tests. You should pass all unit tests related to `Cell` and `Row`
-5. Fill out the code where there are `// TODO` comments in the `Column.java` class. 
-6. Run all unit tests. You should pass all unit tests related to `Cell`, `Row`, and `Column`
-7. Fill out the code where there are `// TODO` comments in the `Block.java` class. 
-8. Run all unit tests. You should pass all unit tests related to `Block`, `Cell`, `Row`, and `Column`
-7. Fill out the code where there are `// TODO` comments in the `Board.java` class. 
-8. Run all unit tests. You should pass all unit tests now.
-9. Run the game (see final section)
 
 # Debugging
 If a test fails, the output may be a bit cryptic. Unfortunately, the platform we are using to host our code does not allow us to run tests individually and also doesn't allow us to see `System.out.println(...)` output from the unit tests. As far as I know, the debugger also doesn't work with unit tests. I believe the best way to debug will be the following:
