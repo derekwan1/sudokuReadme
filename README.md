@@ -139,3 +139,7 @@ After waiting a few seconds for compilation and the app to start, you should see
   - Example: `clear 7 4` and then press the enter key
 - `solve` which will solve the game for you and print the solution. There may be more than one solution to the game, so it may not match your answer. Completing the puzzle will result in a congratulations message and present you with a new puzzle.
 - `new` which will generate a new puzzle.
+
+# Solution
+If you get stuck, feel free to refer to the solution. After all, you're not being graded on this! The goal here is to learn :) There may be multiple ways to implement some of the methods, so your solution doesn't need to match mine exactly.
+https://replit.com/@teststudent11/sudoku#src/Main.java
