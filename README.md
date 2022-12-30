@@ -76,7 +76,24 @@ Then click Run Tests in the new panel
 
 ![runtest](img/runtest.png)
 
-Navigate to the "console" tab (see the "Tools" section from earlier), and you should be able to see how many tests you pass. **Note**: if a test fails, the output may be a bit cryptic. Unfortunately, the platform we are using to host our code does not allow us to run tests individually and also doesn't allow us to see `System.out.println(...)` output from the unit tests. As far as I know, the debugger also doesn't work with unit tests. I believe the best way to debug will be the following:
+Navigate to the "console" tab (see the "Tools" section from earlier), and you should be able to see how many tests you pass. **Before you've written any code, ALL unit tests should fail.**
+
+# Workflow
+Here is the expected order in which you should complete this project
+1. Fill out the code where there are `// TODO` comments in the `Cell.java` class.
+2. Run all unit tests. You should pass all unit tests related to `Cell`
+3. Fill out the code where there are `// TODO` comments in the `Row.java` class. 
+4. Run all unit tests. You should pass all unit tests related to `Cell` and `Row`
+5. Fill out the code where there are `// TODO` comments in the `Column.java` class. 
+6. Run all unit tests. You should pass all unit tests related to `Cell`, `Row`, and `Column`
+7. Fill out the code where there are `// TODO` comments in the `Block.java` class. 
+8. Run all unit tests. You should pass all unit tests related to `Block`, `Cell`, `Row`, and `Column`
+7. Fill out the code where there are `// TODO` comments in the `Board.java` class. 
+8. Run all unit tests. You should pass all unit tests now.
+9. Run the game (see final section)
+
+# Debugging
+If a test fails, the output may be a bit cryptic. Unfortunately, the platform we are using to host our code does not allow us to run tests individually and also doesn't allow us to see `System.out.println(...)` output from the unit tests. As far as I know, the debugger also doesn't work with unit tests. I believe the best way to debug will be the following:
 
 1. Under a failed test, you should see a stack trace. For example, like this. 
 ![stacktrace](img/stacktrace.png)
@@ -107,8 +124,8 @@ If you fail a test and want to see what the test is doing, click the edit button
 After waiting a few seconds for compilation and the app to start, you should see a randomly generated (mostly empty) Sudoku board under the "Console" tab, and you should be able to type letters under the printed board. Here, you can do a number of things. **Note that every time I refer to an index, the index starts at 0 i.e., the top row of the grid will be the 0th row, not the 1st row**
 
 - `set <row> <column> <value>` which will set the cell at the `[row][column]` index to `value`. This will call `board.safeSet(...)`. If the value violates one of the Sudoku conditions, the cell update will fail and reset to 0. If the specified index is a fixed index, the value will not change. 
-  - Example: `set 7 4 3`
+  - Example: `set 7 4 3` and then press the enter key
 - `clear <row> <column>` which will set the cell at the `[row][column]` index to the default value 0. If the specified index is a fixed index, the value will not change.
-  - Example: `clear 7 4`
+  - Example: `clear 7 4` and then press the enter key
 - `solve` which will solve the game for you and print the solution. There may be more than one solution to the game, so it may not match your answer. Completing the puzzle will result in a congratulations message and present you with a new puzzle.
 - `new` which will generate a new puzzle.
