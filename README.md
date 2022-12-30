@@ -3,6 +3,7 @@ Welcome to your first programming project! You will use what you've learned in t
 
 # Prerequisites
 Ensure that you have created an account at [replit.com](https://replit.com/) and **that you have verified your email** 
+Then visit [https://replit.com/@teststudent11/sudoku-skeleton](https://replit.com/@teststudent11/sudoku-skeleton) and fork the REPL to your account.
 
 # Overview
 Sudoku is a puzzle game in which a 9x9 grid must be filled entirely with numbers 1 through 9. The 9x9 grid is further subdivided into nine 3x3 grids, whose purpose will be described shortly. The puzzle is typically filled with a few values at the start and is subject to the following constraints. 
