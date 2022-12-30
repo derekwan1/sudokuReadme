@@ -2,7 +2,7 @@
 Welcome to your first programming project! You will use what you've learned in this course to build a fully functioning app worthy of bragging about in your resume / CV :) After you complete the project, you'll be able to interact with the code by setting / clearing / auto-solving the board.
 
 # Prerequisites
-Ensure that you have created an account at [replit.com](https://replit.com/) and **that you have verified your email** 
+Ensure that you have created an account at [replit.com](https://replit.com/) and **that you have verified your email**. 
 Then visit [https://replit.com/@teststudent11/sudoku-skeleton](https://replit.com/@teststudent11/sudoku-skeleton) and fork the REPL to your account.
 
 # Overview
