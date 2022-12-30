@@ -26,7 +26,8 @@ Since each row, column, and 3x3 grid has 9 elements to fill in, and each row, co
 -----------------------
 ```
  
-Classes should be completed in the order they are listed below. Here is a brief overview of each
+# **CLASSES SHOULD BE COMPLETED IN THE ORDER THEY ARE LISTED BELOW** 
+Here is a brief overview of each
 
 ## Cell
 A sudoku grid is a 9x9 grid; we're calling each of the individual 81 squares a `Cell`. 
