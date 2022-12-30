@@ -103,12 +103,16 @@ If a test fails, the output may be a bit cryptic. Unfortunately, the platform we
 ![stacktrace](img/stacktrace.png)
 The stack trace tells you which line is causing the error. In this case it's `Row.java` in line 27 in my code (see the line that says `at Row.set(Row.java:27)`)
 
-2. Go to the problematic line in your code. In the line right before the error occurs, write the following `throw new IllegalStateException("Debugger info I want to know: " + <variable>);` and comment out the rest of the lines in the method temporarily (wrap the code in `/** */` i.e., `/** code that's commented out */`). You should be able to see the value of `<variable>` in the stack trace when you run the unit test again. For example:
+2. Go to the problematic line in your code. In the line right before the error occurs, write the following 
+
+```throw new IllegalStateException("<description of the variable you want to print>" + <variable>);``` 
+
+and comment out the rest of the lines in the method temporarily (wrap the code in `/** */` i.e., `/** code that's commented out */`). You should be able to see the value of `<variable>` in the stack trace when you run the unit test again. For example:
 ```
 public void set(int column, int value) {
-    throw new IllegalStateException("Cell length: " + this.cells.length);
+    throw new IllegalStateException("cell length: " + this.cells.length);
     /**
-    <some code>
+    this.cells[0] = 1;
     */
 }
 ```
@@ -118,6 +122,8 @@ And in the stack trace, we can now see some debug info. You can keep printing ou
 If you fail a test and want to see what the test is doing, click the edit button next to the test (but do NOT actually edit the test; otherwise, you may accidentally pass a test when you shouldn't have, and it'll be very hard to debug your application as a whole later).
 
 ![edittest](img/edittest.png)
+
+Some of the unit tests have multiple `assertTrue` and `assertFalse` lines, and when the test fails, it can be hard to tell which of the `assert`s failed. One strategy you can use to narrow it down is to click the edit test button and **TEMPORARILY** comment out all the lines in the test (using `/** <code here> */`) except for the first `assertTrue` or `assertFalse`. If you still hit an assertion error, now you know that it's the first assertion that is failing. If the test passes, then remove the second assertion from the comments and see if the test still passes. Repeat until you find the assertion that is causing the test to fail.
 
 # Playing the Game
 
